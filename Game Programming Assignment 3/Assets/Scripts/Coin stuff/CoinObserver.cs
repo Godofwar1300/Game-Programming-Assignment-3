@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface CoinObserver 
 {
-    //void UpdateData(bool collected);
-    void UpdateData(int coinTotal);
+    void UpdateData(bool collected);
+    //void UpdateData(int coinTotal);
 }

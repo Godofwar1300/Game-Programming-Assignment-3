@@ -9,7 +9,7 @@ public class Coin : MonoBehaviour, CoinObserver
     //public int coinTotal;
     bool collected;
 
-    int coinTotal;
+    private static int coinTotal;
 
     public CoinData coinData;
 
@@ -25,15 +25,18 @@ public class Coin : MonoBehaviour, CoinObserver
 
     void Update()
     {
-        Debug.Log(coinTotal);
+        Debug.Log("The coint total is: " + coinTotal);
+        Debug.Log("Collecrted is: " + collected);
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player") && !collected)
         {
+            collected = true;
             coinTotal ++;
-            Debug.Log(coinTotal);
+            Debug.Log("The coint total, on impact, is: " + coinTotal);
+            Debug.Log("Collecrted, on impact, is: " + collected);
             collected = true;
             gc.scoreText.text = "Score: " + coinTotal;
             Destroy(this.gameObject);
@@ -41,13 +44,13 @@ public class Coin : MonoBehaviour, CoinObserver
         }
     }
 
-    //public void UpdateData(bool collected)
-    //{
-    //    this.collected = collected;
-    //}
-
-    public void UpdateData(int coinTotal)
+    public void UpdateData(bool collected)
     {
-        this.coinTotal = coinTotal;
+        this.collected = collected;
     }
+
+    //public void UpdateData(int coinTotal)
+    //{
+    //    this.coinTotal = coinTotal;
+    //}
 }

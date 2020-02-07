@@ -15,8 +15,8 @@ public class CoinData : MonoBehaviour, CoinSubject
 
         observers.Add(observer);
 
-        //observer.UpdateData(collected);
-        observer.UpdateData(coinTotal);
+        observer.UpdateData(collected);
+        //observer.UpdateData(coinTotal);
     }
 
     public void RemoveObserver(CoinObserver observer)
@@ -30,8 +30,8 @@ public class CoinData : MonoBehaviour, CoinSubject
     {
         foreach (CoinObserver observer in observers)
         {
-            //observer.UpdateData(collected);
-            observer.UpdateData(coinTotal);
+            observer.UpdateData(collected);
+            //observer.UpdateData(coinTotal);
             Debug.Log("Observers were notified.");
         }
     }
