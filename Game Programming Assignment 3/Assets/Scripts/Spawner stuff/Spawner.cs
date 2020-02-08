@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+*(Christopher Green)
+*(Spawner.cs)
+* (Assignment 3)
+* (This scripts handles the basic information and the spawning of the "asteroids")
+*/
+
 public class Spawner : MonoBehaviour, SpawnerObserver
 {
 

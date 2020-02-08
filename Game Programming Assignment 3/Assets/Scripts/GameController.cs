@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
+
+/*
+*(Christopher Green)
+*(GameController.cs)
+* (Assignment 3)
+* (This scripts handles the basic game elements like the timer and game over condition)
+*/
 
 public class GameController : MonoBehaviour
 {
 
     public float duration;
     public Text timerText;
-
-    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()

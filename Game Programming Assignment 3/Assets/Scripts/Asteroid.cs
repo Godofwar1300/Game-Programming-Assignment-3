@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+*(Christopher Green)
+*(Asteroid.cs)
+* (Assignment 3)
+* (This scripts contains the basic information about player collision and the destroying of excess asteroids.)
+*/
 public class Asteroid : MonoBehaviour
 {
 
     private GameController gc;
 
-    public bool canDie;
-
     private void Awake()
     {
         gc = GameObject.Find("Game Controller").GetComponent<GameController>();
-        canDie = true;
     }
 
     private void Update()
@@ -22,7 +25,7 @@ public class Asteroid : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player") && canDie)
+        if(collision.gameObject.CompareTag("Player"))
         {
             gc.GameOver();
         }

@@ -2,21 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+*(Christopher Green)
+*(CoinData.cs)
+* (Assignment 3)
+* (This acts as the subject for the coins with its implementation of the interface)
+*/
+
 public class CoinData : MonoBehaviour, CoinSubject
 {
 
-    List<CoinObserver> observers = new List<CoinObserver>();
+    private List<CoinObserver> observers = new List<CoinObserver>();
 
-    private bool collected = false;
-    private int coinTotal = 0;
+    public List<Coin> coins = new List<Coin>();
 
     public void RegisterObserver(CoinObserver observer)
     {
-
         observers.Add(observer);
 
-        observer.UpdateData(collected);
-        //observer.UpdateData(coinTotal);
+        if (coins != null)
+        {
+            observer.UpdateData(coins);
+        }
     }
 
     public void RemoveObserver(CoinObserver observer)
@@ -30,9 +37,14 @@ public class CoinData : MonoBehaviour, CoinSubject
     {
         foreach (CoinObserver observer in observers)
         {
-            observer.UpdateData(collected);
-            //observer.UpdateData(coinTotal);
+            observer.UpdateData(coins);
             Debug.Log("Observers were notified.");
         }
+    }
+
+    public void AddCoin(Coin coin)
+    {
+        coins.Add(coin);
+        NotifyObservers();
     }
 }
