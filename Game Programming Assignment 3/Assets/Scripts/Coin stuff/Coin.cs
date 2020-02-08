@@ -14,8 +14,6 @@ public class Coin : MonoBehaviour
 
     public int coinValue;
     public bool collected;
-    public int totalCoins;
-    public string coinDescription;
 
     public CoinData coinData;
 
