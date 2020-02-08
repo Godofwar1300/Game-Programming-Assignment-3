@@ -495,15 +495,15 @@ PrefabInstance:
       propertyPath: m_Text
       value: 'Your goal in this game is to dodge the endless barrage of obstacles
         and to collect as many points as you can while trying to get to the top of
-        the white platform. You need to also make sure you have collected at least
-        500 points worth of coins (5).
+        the white platform and to the red block at the end that ends the game. You
+        need to also make sure you have collected at least 500 points worth of coins
+        (5).
 
 
         - You move using the WASD keys
 
 
-        -
-        Space is to jump
+        - Space is to jump
 
 '
       objectReference: {fileID: 0}
