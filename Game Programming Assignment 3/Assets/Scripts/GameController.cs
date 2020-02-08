@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
     IEnumerator Timer()
     {
 
-        duration = 20;
+        duration = 60;
 
         while (duration > 0)
         {
@@ -40,10 +40,14 @@ public class GameController : MonoBehaviour
             GameOver();
         }
     }
-
     public void GameOver()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void WinGame()
+    {
+        SceneManager.LoadScene(3);
     }
 
 }

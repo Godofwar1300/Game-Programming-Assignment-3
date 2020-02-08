@@ -17,8 +17,10 @@ public class ButtonBehavior : MonoBehaviour
     public GameObject mainMenu;
     public GameObject gameMenu;
     public GameObject gameoverMenu;
+    public GameObject winMenu;
+    public GameObject instructionsMenu;
 
-    public bool isInMainMenu;
+    //public bool isInMainMenu;
 
     public void Start()
     {
@@ -33,21 +35,35 @@ public class ButtonBehavior : MonoBehaviour
             mainMenu.SetActive(true);
             gameMenu.SetActive(false);
             gameoverMenu.SetActive(false);
-            isInMainMenu = true;
+            winMenu.SetActive(false);
+            instructionsMenu.SetActive(false);
+            // isInMainMenu = true;
         }
-        else if (SceneManager.GetActiveScene().name == "Game Scene")
+        else if (SceneManager.GetActiveScene().name == "Game")
         {
             gameMenu.SetActive(true);
             mainMenu.SetActive(false);
             gameoverMenu.SetActive(false);
-            isInMainMenu = false;
+            winMenu.SetActive(false);
+            instructionsMenu.SetActive(false);
+            //   isInMainMenu = false;
         }
-        else
+        else if (SceneManager.GetActiveScene().name == "Game Over")
         {
             gameoverMenu.SetActive(true);
             gameMenu.SetActive(false);
             mainMenu.SetActive(false);
-            isInMainMenu = false;
+            winMenu.SetActive(false);
+            instructionsMenu.SetActive(false);
+        }
+        else if (SceneManager.GetActiveScene().name == "Win")
+        {
+            winMenu.SetActive(true);
+            gameoverMenu.SetActive(false);
+            gameMenu.SetActive(false);
+            mainMenu.SetActive(false);
+            instructionsMenu.SetActive(false);
+           // isInMainMenu = false;
         }
     }
 
@@ -64,6 +80,16 @@ public class ButtonBehavior : MonoBehaviour
     }
 
     public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Instructions()
+    {
+        SceneManager.LoadScene(4);
+    }
+
+    public void InstructionsBack()
     {
         SceneManager.LoadScene(0);
     }
